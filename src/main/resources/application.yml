@@ -1,0 +1,30 @@
+spring:
+
+  application:
+    name: WonderFileManageRepository
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${OAUTH2_ISSUER:${application.keycloak-url}/realms/${application.realm}}
+          jwk-set-uri: ${OAUTH2_JWK:${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs}
+
+
+server:
+#  servlet:
+#    context-path: '/api/'
+  error:
+    include-message: always
+  port: ${PORT:8888}
+  address: 0.0.0.0
+  tomcat:
+    basedir: C:/Java
+application:
+  realm: wonder
+  keycloak-url: ${KEYCLOAK_URL:http://34.118.60.220}
+  client-id: wonder
+  config:
+    bucket-name: wonder-bucket
+    max-upload-count: 3 #Max 3 files in an upload
+    max-request-size: 10485760 #10MB
+    max-in-mem-size: 10485760 #10MB

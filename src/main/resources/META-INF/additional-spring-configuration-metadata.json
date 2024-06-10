@@ -1,0 +1,29 @@
+{
+  "properties": [
+    {
+      "name": "application.config.bucket-name",
+      "type": "java.lang.String",
+      "description": "Description for app.config.bucket-name."
+    },
+    {
+      "name": "application.client-id",
+      "type": "java.lang.String",
+      "description": "Description for application.client-id."
+    },
+    {
+      "name": "application.config.max-upload-count",
+      "type": "java.lang.String",
+      "description": "Description for application.config.max-upload-count."
+    },
+    {
+      "name": "application.config.max-request-size",
+      "type": "java.lang.String",
+      "description": "Description for application.config.max-request-size."
+    },
+    {
+      "name": "application.config.max-in-mem-size",
+      "type": "java.lang.String",
+      "description": "Description for application.config.max-in-mem-size."
+    }
+  ]
+}
