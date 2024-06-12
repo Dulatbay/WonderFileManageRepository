@@ -44,6 +44,7 @@ public class FileRouter {
     @NonNull
     public Mono<ServerResponse> handleFileUpload(final ServerRequest serverRequest) {
         var directory = serverRequest.pathVariable("directory");
+        var generateFileName = Boolean.parseBoolean(serverRequest.queryParam("generate-file-name").orElse("false"));
 
         log.info("directory: {}", directory);
 
@@ -62,12 +63,11 @@ public class FileRouter {
                             .toList();
 
 
-
                     return Flux.fromIterable(filePartList)
                             .flatMap(filePart -> DataBufferUtils.join(filePart.content())
                                     .map(DataBuffer::asInputStream)
                                     .map(inputStream -> storageService
-                                            .uploadFile(inputStream, filePart.filename(), directory))
+                                            .uploadFile(inputStream, filePart.filename(), directory, generateFileName))
                                     .filter(StringUtils::isNotBlank))
                             .collectList();
                 });

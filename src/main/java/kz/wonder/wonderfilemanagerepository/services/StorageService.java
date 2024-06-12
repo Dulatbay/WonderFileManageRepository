@@ -14,6 +14,7 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import static java.lang.String.format;
 
@@ -33,10 +34,14 @@ public class StorageService {
     }
 
 
-    public String uploadFile(InputStream inputStream, String filename, String directory) {
+    public String uploadFile(InputStream inputStream, String filename, String directory, boolean generateFileName) {
         try {
             byte[] fileBytes = inputStream.readAllBytes();
             long fileSize = fileBytes.length;
+            if (generateFileName) {
+                String extension = filename.substring(filename.lastIndexOf("."));
+                filename = UUID.randomUUID() + extension;
+            }
             String contentType = Files.probeContentType(new File(filename).toPath());
             String storagePath = String.format("%s/%s", directory, filename);
 
