@@ -14,7 +14,6 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 import static java.lang.String.format;
 
@@ -57,7 +56,7 @@ public class StorageService {
 
             if (blob != null && !blob.getContentType().isBlank()) {
                 log.info("File [{}] uploaded successfully.", filename);
-                return filename.concat(" uploaded successfully");
+                return filename;
             }
 
         } catch (IOException ioe) {
