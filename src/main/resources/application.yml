@@ -1,5 +1,9 @@
 spring:
-
+  servlet:
+    multipart:
+      max-file-size: 1073741824
+      max-request-size: 1073741824
+      enabled: true
   application:
     name: WonderFileManageRepository
   security:
