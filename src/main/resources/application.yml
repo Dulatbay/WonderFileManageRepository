@@ -26,5 +26,5 @@ application:
   config:
     bucket-name: wonder-bucket
     max-upload-count: 100 #Max 100 files in an upload
-    max-request-size: 10485760 #10MB
-    max-in-mem-size: 10485760 #10MB
+    max-request-size: ${MAX_REQUEST_SIZE:1073741824}  #1gb
+    max-in-mem-size: ${MAX_IN_MEM_SIZE:1073741824}  #1gb
