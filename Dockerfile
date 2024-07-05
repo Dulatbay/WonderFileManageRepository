@@ -19,9 +19,9 @@ FROM openjdk:21-slim
 
 WORKDIR /app
 
-ENV GOOGLE_APPLICATION_CREDENTIALS=/app/gcp_service_account.json
+ENV GOOGLE_APPLICATION_CREDENTIALS=/app/bucket_service_account.json
 
-COPY gcp_service_account.json /app/gcp_service_account.json
+COPY gcp_service_account.json /app/bucket_service_account.json
 
 COPY --from=build /app/build/libs/*.jar app.jar
 

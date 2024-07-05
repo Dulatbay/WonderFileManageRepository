@@ -25,10 +25,10 @@ server:
     basedir: C:/Java
 application:
   realm: wonder
-  keycloak-url: ${KEYCLOAK_URL:http://34.118.60.220}
+  keycloak-url: ${KEYCLOAK_URL:https://keycloak-3gn7q5gs6q-lm.a.run.app}
   client-id: wonder
   config:
-    bucket-name: wonder-bucket
-    max-upload-count: 150 #Max 150 files in an upload
+    bucket-name: w-bucker
+    max-upload-count: 1000 #Max 1000 files in an upload
     max-request-size: ${MAX_REQUEST_SIZE:1073741824}  #1gb
     max-in-mem-size: ${MAX_IN_MEM_SIZE:1073741824}  #1gb
