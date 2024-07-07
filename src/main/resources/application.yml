@@ -12,8 +12,6 @@ spring:
         jwt:
           issuer-uri: ${OAUTH2_ISSUER:${application.keycloak-url}/realms/${application.realm}}
           jwk-set-uri: ${OAUTH2_JWK:${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs}
-
-
 server:
 #  servlet:
 #    context-path: '/api/'
